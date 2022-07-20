@@ -8,7 +8,7 @@ import java.util.Set;
 public class GenerateEngineToConsole implements GenerateEngine {
 
     @Override
-    public void generate(String packageName, Set<String> listImports, Class<?> _class,  StringBuilder builder, BuilderInformation builderInformation) {
+    public void generate(String packageName, Set<String> listImports, Class<?> _class, StringBuilder builder, BuilderInformation builderInformation) {
         System.out.printf("package %s;", packageName);
         System.out.println("\n");
         for(String str: listImports) {

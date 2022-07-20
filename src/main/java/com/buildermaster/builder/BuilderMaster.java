@@ -11,6 +11,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import static com.buildermaster.utils.MasterUtils.initLowerLetter;
+
 /**
  * Classe responsável pela criação de builders de entidades
  * Classe modificada por Wisley Bruno Marques França
@@ -22,7 +24,7 @@ public class BuilderMaster {
     Set<String> listImports;
 
     private final GenerateEngine generateEngine;
-    private BuilderInformation builderInformation;
+    private final BuilderInformation builderInformation;
 
     public BuilderMaster(GenerateEngine generateEngine, BuilderInformation builderInformation) {
         listImports = new HashSet<String>();
@@ -143,14 +145,4 @@ public class BuilderMaster {
         if(classe.contains("."))
             listImports.add("import " + classe + ";");
     }
-
-    public static String initLowerLetter(String text)
-    {
-        String regex = ".*[A-Z].*";
-        if (text.length() == 0) throw new IllegalArgumentException("O texto não pode estar vázio");
-        if (!String.valueOf(text.charAt(0)).matches(regex)) return text.concat("Object");
-        String startText = String.valueOf(text.charAt(0)).toLowerCase();
-        return startText.concat( text.substring(1));
-    }
-
 }

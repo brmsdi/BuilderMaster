@@ -2,14 +2,12 @@ package com.buildermaster.builder;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.extern.java.Log;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Getter
 @Setter
-@Log
 public class BuilderInformation {
     private Integer classQuantity;
     private Integer validClassQuantity;
@@ -28,12 +26,12 @@ public class BuilderInformation {
 
     public void logConsole()
     {
-        log.info("===Builder Master executado===");
-        classList.parallelStream().forEach(item -> log.info("Classe criada: " + item));
-        log.info("Quantidade de classes recebidas: " + classQuantity);
-        log.info("Quantidade de classes validas: " + validClassQuantity);
-        log.info("Total de classes criadas: " + createdClassQuantity);
-        log.info("Falhas: " + notCreatedClassQuantity);
-        log.warning("Classes iguais e que serão criadas no mesmo pacote são removidas da lista. Portanto não são criadas!");
+        System.out.println("===Builder Master executado===");
+        classList.parallelStream().forEach(item -> System.out.println("Classe criada: " + item));
+        System.out.println("Quantidade de classes recebidas: " + classQuantity);
+        System.out.println("Quantidade de classes validas: " + validClassQuantity);
+        System.out.println("Total de classes criadas: " + createdClassQuantity);
+        System.out.println("Falhas: " + notCreatedClassQuantity);
+        System.out.println("Classes iguais e que serão criadas no mesmo pacote são removidas da lista. Portanto não são criadas!");
     }
 }
